@@ -1,0 +1,7 @@
+{
+  "name": "Mourvi Lalaji Caterers",
+  "description": "Premium event management and catering services for weddings, parties, and corporate events.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
