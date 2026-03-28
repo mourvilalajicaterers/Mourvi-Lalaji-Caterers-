@@ -10,65 +10,38 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  console.log("Starting server in mode:", process.env.NODE_ENV || "development");
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: "custom", // Use custom to handle routing manually
+      appType: "custom",
     });
     app.use(vite.middlewares);
 
-    // Clean URL mapping for development
-    app.get("/services", async (req, res, next) => {
+    const serveHtml = async (req: express.Request, res: express.Response, next: express.NextFunction, file: string) => {
       try {
-        const html = await vite.transformIndexHtml(req.url, await (await import("fs/promises")).readFile(path.resolve(__dirname, "services.html"), "utf-8"));
+        const template = await (await import("fs/promises")).readFile(path.resolve(__dirname, file), "utf-8");
+        const html = await vite.transformIndexHtml(req.url, template);
         res.status(200).set({ "Content-Type": "text/html" }).end(html);
       } catch (e) {
+        console.error(`Error serving ${file}:`, e);
         next(e);
       }
-    });
+    };
 
-    app.get("/about", async (req, res, next) => {
-      try {
-        const html = await vite.transformIndexHtml(req.url, await (await import("fs/promises")).readFile(path.resolve(__dirname, "about.html"), "utf-8"));
-        res.status(200).set({ "Content-Type": "text/html" }).end(html);
-      } catch (e) {
-        next(e);
-      }
-    });
-
-    app.get("/contact", async (req, res, next) => {
-      try {
-        const html = await vite.transformIndexHtml(req.url, await (await import("fs/promises")).readFile(path.resolve(__dirname, "contact.html"), "utf-8"));
-        res.status(200).set({ "Content-Type": "text/html" }).end(html);
-      } catch (e) {
-        next(e);
-      }
-    });
-
-    app.get("/ai-planner", async (req, res, next) => {
-      try {
-        const html = await vite.transformIndexHtml(req.url, await (await import("fs/promises")).readFile(path.resolve(__dirname, "ai-planner.html"), "utf-8"));
-        res.status(200).set({ "Content-Type": "text/html" }).end(html);
-      } catch (e) {
-        next(e);
-      }
-    });
-
-    // Fallback to index.html for root
-    app.get("/", async (req, res, next) => {
-      try {
-        const html = await vite.transformIndexHtml(req.url, await (await import("fs/promises")).readFile(path.resolve(__dirname, "index.html"), "utf-8"));
-        res.status(200).set({ "Content-Type": "text/html" }).end(html);
-      } catch (e) {
-        next(e);
-      }
-    });
+    app.get("/", (req, res, next) => serveHtml(req, res, next, "index.html"));
+    app.get("/services", (req, res, next) => serveHtml(req, res, next, "services.html"));
+    app.get("/about", (req, res, next) => serveHtml(req, res, next, "about.html"));
+    app.get("/contact", (req, res, next) => serveHtml(req, res, next, "contact.html"));
+    app.get("/ai-planner", (req, res, next) => serveHtml(req, res, next, "ai-planner.html"));
 
   } else {
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    console.log("Serving static files from:", distPath);
+    
+    app.use(express.static(distPath, { extensions: ['html'] }));
 
-    // Clean URL mapping for production
     app.get("/services", (req, res) => res.sendFile(path.join(distPath, "services.html")));
     app.get("/about", (req, res) => res.sendFile(path.join(distPath, "about.html")));
     app.get("/contact", (req, res) => res.sendFile(path.join(distPath, "contact.html")));
