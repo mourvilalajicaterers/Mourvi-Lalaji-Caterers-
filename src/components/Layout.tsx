@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const LOGO_URL = "https://i.ibb.co/gL2vBKtr/Whats-App-Image-2026-03-28-at-21-50-29.jpg";
@@ -99,9 +99,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <span className="serif text-2xl font-bold">Mourvi Lalaji</span>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Elevating your events with exquisite flavors and impeccable service. From intimate gatherings to grand weddings, we make every moment delicious.
-              </p>
+              <div className="space-y-2">
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Elevating your events with exquisite flavors and impeccable service. From intimate gatherings to grand weddings, we make every moment delicious.
+                </p>
+                <p className="text-gold text-sm font-semibold">Founded by Rahul Dogra</p>
+              </div>
               <div className="flex gap-4">
                 <SocialIcon icon={<Instagram size={18} />} />
                 <SocialIcon icon={<Facebook size={18} />} />
@@ -126,15 +129,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex gap-3">
                   <MapPin size={18} className="text-gold shrink-0" />
-                  <span>123 Gourmet Plaza, Celebration Road, New Delhi, India</span>
+                  <span>B 320 A, Block B, Nandgram, Ghukna, Ghaziabad, Uttar Pradesh 201003</span>
                 </li>
                 <li className="flex gap-3">
                   <Phone size={18} className="text-gold shrink-0" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 7404223803</span>
                 </li>
                 <li className="flex gap-3">
                   <Mail size={18} className="text-gold shrink-0" />
-                  <span>info@mourvilalaji.com</span>
+                  <span>mourvilalajicaterers@gmail.com</span>
+                </li>
+                <li className="flex gap-3">
+                  <Clock size={18} className="text-gold shrink-0" />
+                  <span>24/7 in Service</span>
                 </li>
               </ul>
             </div>
@@ -144,7 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="serif text-xl font-bold mb-6 text-gold">Find Us</h4>
               <div className="rounded-xl overflow-hidden h-48 border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8392319277!2d77.06889754725782!3d28.527280343993733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715326640f!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1711643194567!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.682672159114!2d77.4338423!3d28.6931265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf19085c55555%3A0x6d88888888888888!2sNandgram%2C%20Ghaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1711643194567!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -156,8 +163,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-white/10 text-center text-xs text-gray-500">
+          <div className="pt-8 border-t border-white/10 text-center text-xs text-gray-500 space-y-2">
             <p>&copy; {new Date().getFullYear()} Mourvi Lalaji Caterers & Events. All rights reserved. ® Registered Trademark.</p>
+            <p>Designed by <a href="https://www.waltdesignsstudio.in" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Walt Designs & Studio</a></p>
           </div>
         </div>
       </footer>

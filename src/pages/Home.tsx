@@ -1,12 +1,21 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronRight, Star, Users, Utensils, Calendar } from 'lucide-react';
+import { ChevronRight, Star, Users, Utensils, Calendar, Send } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="relative">
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Premium Marquee */}
+        <div className="absolute top-0 left-0 right-0 z-20 bg-gold/90 text-white py-2 overflow-hidden border-b border-white/20">
+          <div className="flex whitespace-nowrap animate-marquee">
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+          </div>
+        </div>
+
         {/* Banquet Background */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -61,24 +70,24 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gold-light">
+      <section className="py-20 bg-magenta-dark text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <StatCard icon={<Utensils className="text-gold" />} number="500+" label="Events Catered" />
-            <StatCard icon={<Users className="text-gold" />} number="50k+" label="Happy Guests" />
-            <StatCard icon={<Star className="text-gold" />} number="15+" label="Years Experience" />
-            <StatCard icon={<Calendar className="text-gold" />} number="100%" label="Satisfaction" />
+            <StatCard icon={<Utensils className="text-white" />} number="500+" label="Events Catered" />
+            <StatCard icon={<Users className="text-white" />} number="4000+" label="Happy Guests" />
+            <StatCard icon={<Star className="text-white" />} number="5+" label="Years Experience" />
+            <StatCard icon={<Calendar className="text-white" />} number="100%" label="Satisfaction" />
           </div>
         </div>
       </section>
 
       {/* Featured Services */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-magenta-dark/95 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="serif text-4xl md:text-5xl font-bold mb-4">Our Signature Services</h2>
-            <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
+            <p className="text-gray-200 max-w-2xl mx-auto">
               We specialize in a wide range of catering styles, ensuring that every event is uniquely tailored to your vision and taste.
             </p>
           </div>
@@ -102,7 +111,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href="/services" className="text-gold font-bold hover:underline flex items-center justify-center gap-1">
+            <a href="/services" className="text-white font-bold hover:underline flex items-center justify-center gap-1">
               Explore All Services <ChevronRight size={18} />
             </a>
           </div>
@@ -113,15 +122,113 @@ export default function Home() {
       <section className="py-24 bg-charcoal text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <Star className="text-gold mx-auto mb-8" size={48} fill="currentColor" />
-            <p className="serif text-2xl md:text-3xl italic leading-relaxed mb-10">
-              "Mourvi Lalaji Caterers turned our wedding into a culinary journey. The attention to detail, the presentation, and most importantly, the taste was beyond our expectations. Our guests are still talking about the food!"
-            </p>
-            <div>
-              <h4 className="font-bold text-xl">Priya & Rahul Sharma</h4>
-              <p className="text-gold text-sm uppercase tracking-widest">Wedding Clients</p>
+          <div className="text-center mb-16">
+            <h2 className="serif text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+            <div className="w-24 h-1 bg-gold mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard 
+              text="We have organized a house warming party (Saviour park, Mohan Nagar) and Lalaji caterers were appointed for food arrangement at last hour (a day before). I am so impressed by the food quality and arrangement. There are few other things I would like to share about this team, they are punctual. Cleanliness maintained. I would definitely recommend Lalaji caterers with 5 stars."
+              author="Shalini Das"
+              role="House Warming Party"
+              image="https://picsum.photos/seed/shalini/100/100"
+            />
+            <TestimonialCard 
+              text="One of the best catering service in Ghaziabad... Their behaviour is polite and are responsive... They are very generous I am sure if you ask they will give you concession also... But believe me the service they provide will make you feel like there is no need of concession... ❤️❤️ Hygienic,Deliciousness,Proper staff will polite behaviour,Best Decoration,Overall Best... 👍🏻"
+              author="Pinnacle Classes"
+              role="Ghaziabad Client"
+              image="https://picsum.photos/seed/pinnacle/100/100"
+            />
+            <TestimonialCard 
+              text="We had an event with Team Lalji , which is amazingly superb , very well responsive in terms of everything ,not only caterers , but also very good in terms of organising and delivering excellent service. Thankyou team Lalji"
+              author="Jeevan Adhikari"
+              role="Event Client"
+              image="https://picsum.photos/seed/jeevan/100/100"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Enquiry Form */}
+      <section className="py-24 bg-magenta-dark text-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20">
+            <div className="text-center mb-10">
+              <h2 className="serif text-4xl font-bold text-white mb-4">Quick Enquiry</h2>
+              <p className="text-gray-200">Fill out the form below and we'll get back to you shortly.</p>
             </div>
+            <form action="https://formspree.io/f/xreoperz" method="POST" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Full Name</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    placeholder="John Doe"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Email Address</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    required
+                    placeholder="john@example.com"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    required
+                    placeholder="+91 00000 00000"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Event Type</label>
+                  <select name="event_type" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all appearance-none text-white">
+                    <option className="bg-charcoal">Wedding</option>
+                    <option className="bg-charcoal">Corporate Event</option>
+                    <option className="bg-charcoal">Birthday Party</option>
+                    <option className="bg-charcoal">Private Dinner</option>
+                    <option className="bg-charcoal">Other</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Persons approx</label>
+                  <input 
+                    type="number" 
+                    name="persons_approx"
+                    required
+                    placeholder="e.g. 150"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Your Message</label>
+                <textarea 
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us about your event..."
+                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all resize-none text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="w-full bg-gold text-white py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-charcoal transition-all duration-300 flex items-center justify-center gap-3 group">
+                Send Inquiry <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -131,10 +238,35 @@ export default function Home() {
 
 function StatCard({ icon, number, label }: { icon: React.ReactNode, number: string, label: string }) {
   return (
-    <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+    <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
       <div className="flex justify-center mb-4">{icon}</div>
-      <div className="text-3xl font-bold text-charcoal mb-1">{number}</div>
-      <div className="text-xs uppercase tracking-widest text-gray-500 font-medium">{label}</div>
+      <div className="text-3xl font-bold text-white mb-1">{number}</div>
+      <div className="text-xs uppercase tracking-widest text-gray-300 font-medium">{label}</div>
+    </div>
+  );
+}
+
+function TestimonialCard({ text, author, role, image }: { text: string, author: string, role: string, image: string }) {
+  return (
+    <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-gold/50 transition-all duration-300">
+      <div className="flex gap-1 mb-6">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} size={16} className="text-gold" fill="currentColor" />
+        ))}
+      </div>
+      <p className="text-gray-300 text-sm leading-relaxed mb-6 italic">"{text}"</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src={image} 
+          alt={author} 
+          className="w-10 h-10 rounded-full object-cover border border-gold/30"
+          referrerPolicy="no-referrer"
+        />
+        <div>
+          <h4 className="font-bold text-white text-sm">{author}</h4>
+          <p className="text-gold text-[10px] uppercase tracking-widest">{role}</p>
+        </div>
+      </div>
     </div>
   );
 }

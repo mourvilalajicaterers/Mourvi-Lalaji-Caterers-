@@ -6,7 +6,9 @@
   --font-sans: "Inter", sans-serif;
   
   --color-gold: #D4AF37;
+  --color-gold-dark: #B8860B;
   --color-gold-light: #F9F6EE;
+  --color-magenta-dark: #8B008B;
   --color-charcoal: #1A1A1A;
 }
 
@@ -18,4 +20,13 @@ body {
 
 .serif {
   font-family: var(--font-serif);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }

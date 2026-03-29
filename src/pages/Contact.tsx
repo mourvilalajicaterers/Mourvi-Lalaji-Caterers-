@@ -31,26 +31,26 @@ export default function Contact() {
                 <ContactItem 
                   icon={<Phone className="text-gold" />}
                   title="Call Us"
-                  content="+91 98765 43210"
-                  subContent="Mon-Sat, 9am - 8pm"
+                  content="+91 7404223803"
+                  subContent="Founded by Rahul Dogra"
                 />
                 <ContactItem 
                   icon={<Mail className="text-gold" />}
                   title="Email Us"
-                  content="info@mourvilalaji.com"
+                  content="mourvilalajicaterers@gmail.com"
                   subContent="We'll respond within 24 hours"
                 />
                 <ContactItem 
                   icon={<MapPin className="text-gold" />}
                   title="Visit Us"
-                  content="123 Gourmet Plaza, Celebration Road"
-                  subContent="New Delhi, India - 110001"
+                  content="B 320 A, Block B, Nandgram, Ghukna"
+                  subContent="Ghaziabad, Uttar Pradesh 201003"
                 />
                 <ContactItem 
                   icon={<Clock className="text-gold" />}
                   title="Working Hours"
-                  content="Monday - Saturday"
-                  subContent="09:00 AM - 08:00 PM"
+                  content="24/7 in Service"
+                  subContent="Always ready to serve you"
                 />
               </div>
             </div>
@@ -70,12 +70,14 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl shadow-gray-200 border border-gray-100">
               <h2 className="serif text-3xl font-bold mb-8 text-charcoal">Send Us a Message</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form action="https://formspree.io/f/xreoperz" method="POST" className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Full Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      required
                       placeholder="John Doe"
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
                     />
@@ -84,24 +86,28 @@ export default function Contact() {
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</label>
                     <input 
                       type="email" 
+                      name="email"
+                      required
                       placeholder="john@example.com"
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Phone Number</label>
                     <input 
                       type="tel" 
+                      name="phone"
+                      required
                       placeholder="+91 00000 00000"
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Event Type</label>
-                    <select className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all appearance-none">
+                    <select name="event_type" className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all appearance-none">
                       <option>Wedding</option>
                       <option>Corporate Event</option>
                       <option>Birthday Party</option>
@@ -109,18 +115,29 @@ export default function Contact() {
                       <option>Other</option>
                     </select>
                   </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Persons approx</label>
+                    <input 
+                      type="number" 
+                      name="persons_approx"
+                      required
+                      placeholder="e.g. 150"
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Your Message</label>
                   <textarea 
+                    name="message"
                     rows={6}
                     placeholder="Tell us about your event..."
                     className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all resize-none"
                   ></textarea>
                 </div>
 
-                <button className="w-full bg-gold text-white py-5 rounded-xl font-bold text-lg hover:bg-charcoal transition-all duration-300 flex items-center justify-center gap-3 group">
+                <button type="submit" className="w-full bg-gold text-white py-5 rounded-xl font-bold text-lg hover:bg-charcoal transition-all duration-300 flex items-center justify-center gap-3 group">
                   Send Inquiry <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </form>

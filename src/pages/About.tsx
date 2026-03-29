@@ -97,31 +97,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Team */}
-      <section className="py-24 max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="serif text-4xl font-bold mb-4">Meet Our Master Chefs</h2>
-          <p className="text-gray-500">The creative minds behind our exquisite menus</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <TeamMember 
-            image="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&q=80&w=800"
-            name="Chef Vikram Singh"
-            role="Executive Chef"
-          />
-          <TeamMember 
-            image="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=800"
-            name="Chef Ananya Rao"
-            role="Pastry Specialist"
-          />
-          <TeamMember 
-            image="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&q=80&w=800"
-            name="Chef Sameer Khan"
-            role="Tandoor Master"
-          />
-        </div>
-      </section>
     </div>
   );
 }
