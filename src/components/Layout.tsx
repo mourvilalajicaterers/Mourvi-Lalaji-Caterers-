@@ -7,15 +7,32 @@ const LOGO_URL = "https://i.ibb.co/gL2vBKtr/Whats-App-Image-2026-03-28-at-21-50-
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState('');
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
+    const timer = setTimeout(() => setShowIntro(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative overflow-x-hidden">
+      {/* Curtain Intro */}
+      <AnimatePresence>
+        {showIntro && (
+          <div className="fixed inset-0 z-[100] flex pointer-events-none">
+            <div className="w-1/2 h-full bg-red-dark border-r border-gold/20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] animate-curtain-left flex items-center justify-end pr-8">
+              <div className="serif text-white text-4xl font-bold opacity-20 rotate-90 whitespace-nowrap">MOURVI LALAJI</div>
+            </div>
+            <div className="w-1/2 h-full bg-red-dark border-l border-gold/20 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] animate-curtain-right flex items-center justify-start pl-8">
+              <div className="serif text-white text-4xl font-bold opacity-20 -rotate-90 whitespace-nowrap">CATERERS</div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-100/90 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <a href="/" className="flex items-center gap-2 group">
@@ -149,7 +166,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Map */}
             <div>
               <h4 className="serif text-xl font-bold mb-6 text-gold">Find Us</h4>
-              <div className="rounded-xl overflow-hidden h-48 border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="rounded-xl overflow-hidden h-48 border border-white/10 transition-all duration-500">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.682672159114!2d77.4338423!3d28.6931265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf19085c55555%3A0x6d88888888888888!2sNandgram%2C%20Ghaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1711643194567!5m2!1sen!2sin" 
                   width="100%" 
@@ -158,6 +175,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Mourvi Lalaji Caterers Location"
                 ></iframe>
               </div>
             </div>

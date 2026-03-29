@@ -13,6 +13,9 @@ export default function Home() {
             <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
             <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
             <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+            <span className="mx-4 text-sm font-bold tracking-widest uppercase">Welcome to "Mourvi Lalaji Caterers" • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
           </div>
         </div>
 
@@ -70,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-magenta-dark text-white">
+      <section className="py-20 bg-red-dark text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <StatCard icon={<Utensils className="text-white" />} number="500+" label="Events Catered" />
@@ -82,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-24 bg-magenta-dark/95 text-white">
+      <section className="py-24 bg-red-dark/95 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="serif text-4xl md:text-5xl font-bold mb-4">Our Signature Services</h2>
@@ -151,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Quick Enquiry Form */}
-      <section className="py-24 bg-magenta-dark text-white">
+      <section className="py-24 bg-red-dark text-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20">
             <div className="text-center mb-10">
