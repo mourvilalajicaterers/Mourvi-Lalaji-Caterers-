@@ -394,16 +394,11 @@ export default function EventGallery() {
                     <Maximize2 className="text-white w-10 h-10" />
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <div className="flex items-center gap-2 text-gold mb-2">
-                    <Camera size={16} />
-                    <span className="text-xs font-bold uppercase tracking-wider">{item.category}</span>
+                <div className="p-5 bg-white border-t border-gray-50">
+                  <div className="flex items-center gap-2 text-gold mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest">{item.category}</span>
                   </div>
-                  <h3 className="text-white font-bold text-xl leading-tight">{item.title}</h3>
-                </div>
-                <div className="p-4 md:hidden">
-                  <div className="text-gold text-[10px] font-bold uppercase mb-1">{item.category}</div>
-                  <h3 className="text-charcoal font-bold text-sm">{item.title}</h3>
+                  <h3 className="text-charcoal font-bold text-base leading-snug group-hover:text-gold transition-colors">{item.title}</h3>
                 </div>
               </motion.div>
             ))}
@@ -420,16 +415,13 @@ export default function EventGallery() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black/95 flex flex-col"
           >
-            <div className="flex justify-between items-center p-4 md:p-6 text-white">
-              <div className="flex flex-col">
-                <h3 className="text-lg md:text-xl font-bold">{filteredItems[selectedImageIndex].title}</h3>
-                <span className="text-gold text-sm font-medium uppercase tracking-widest">{filteredItems[selectedImageIndex].category}</span>
-              </div>
+            <div className="flex justify-end p-4 md:p-6 text-white">
               <button 
                 onClick={closeLightbox}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 rounded-full transition-colors group"
               >
-                <X size={32} />
+                <span className="text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Close</span>
+                <X size={24} />
               </button>
             </div>
 
@@ -449,14 +441,21 @@ export default function EventGallery() {
                 className="w-full h-full"
               >
                 {filteredItems.map((item, idx) => (
-                  <SwiperSlide key={idx} className="flex items-center justify-center p-4 md:p-12">
-                    <div className="swiper-zoom-container">
-                      <img 
-                        src={item.url} 
-                        alt={item.title} 
-                        className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-                        referrerPolicy="no-referrer"
-                      />
+                  <SwiperSlide key={idx} className="flex flex-col h-full p-4 md:p-8">
+                    <div className="flex-1 w-full flex items-center justify-center min-h-0">
+                      <div className="swiper-zoom-container h-full w-full flex items-center justify-center">
+                        <img 
+                          src={item.url} 
+                          alt={item.title} 
+                          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    </div>
+                    {/* Lightbox Caption - Below the image, fixed area */}
+                    <div className="shrink-0 w-full max-w-3xl mx-auto text-center mt-6 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                      <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-2 block">{item.category}</span>
+                      <h4 className="text-lg md:text-2xl font-bold serif text-white">{item.title}</h4>
                     </div>
                   </SwiperSlide>
                 ))}

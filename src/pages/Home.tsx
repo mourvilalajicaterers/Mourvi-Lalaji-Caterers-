@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronRight, Star, Users, Utensils, Calendar, Send, ShieldCheck, Clock, Award, Heart, Instagram } from 'lucide-react';
+import { ChevronRight, Star, Users, Utensils, Calendar, Send, ShieldCheck, Clock, Award, Heart, Instagram, Maximize2 } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -332,17 +332,23 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl"
+              className="group relative bg-white/5 backdrop-blur-sm rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 cursor-pointer"
+              onClick={() => window.location.href = '/event-gallery'}
             >
-              <img 
-                src="https://i.ibb.co/hFWLpG6z/Whats-App-Image-2026-03-29-at-20-40-33.jpg" 
-                alt="Special Catering Setup" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Catering</span>
-                <h3 className="text-white font-bold text-xl">Exquisite Specials</h3>
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img 
+                  src="https://i.ibb.co/hFWLpG6z/Whats-App-Image-2026-03-29-at-20-40-33.jpg" 
+                  alt="Special Catering Setup" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Maximize2 className="text-white w-10 h-10" />
+                </div>
+              </div>
+              <div className="p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2 block">Catering</span>
+                <h3 className="text-white font-bold text-xl group-hover:text-gold transition-colors">Exquisite Specials</h3>
               </div>
             </motion.div>
 
@@ -351,17 +357,23 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl"
+              className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer"
+              onClick={() => window.location.href = '/event-gallery'}
             >
-              <img 
-                src="https://i.ibb.co/twf1FRC1/Whats-App-Image-2026-03-29-at-20-41-25.jpg" 
-                alt="Flower Decoration" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Decoration</span>
-                <h3 className="text-white font-bold text-xl">Floral Elegance</h3>
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img 
+                  src="https://i.ibb.co/twf1FRC1/Whats-App-Image-2026-03-29-at-20-41-25.jpg" 
+                  alt="Flower Decoration" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Maximize2 className="text-white w-10 h-10" />
+                </div>
+              </div>
+              <div className="p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2 block">Decoration</span>
+                <h3 className="text-white font-bold text-xl group-hover:text-gold transition-colors">Floral Elegance</h3>
               </div>
             </motion.div>
 
@@ -370,17 +382,23 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl hidden lg:block"
+              className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl hidden lg:block bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer"
+              onClick={() => window.location.href = '/event-gallery'}
             >
-              <img 
-                src="https://i.ibb.co/ycGbQJJN/Whats-App-Image-2026-03-29-at-20-41-28-2.jpg" 
-                alt="Candle Light Setup" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Setup</span>
-                <h3 className="text-white font-bold text-xl">Atmospheric Lighting</h3>
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img 
+                  src="https://i.ibb.co/ycGbQJJN/Whats-App-Image-2026-03-29-at-20-41-28-2.jpg" 
+                  alt="Candle Light Setup" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Maximize2 className="text-white w-10 h-10" />
+                </div>
+              </div>
+              <div className="p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2 block">Setup</span>
+                <h3 className="text-white font-bold text-xl group-hover:text-gold transition-colors">Atmospheric Lighting</h3>
               </div>
             </motion.div>
           </div>

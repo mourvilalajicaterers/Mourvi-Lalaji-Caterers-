@@ -6,9 +6,9 @@ export default function About() {
   const [rating, setRating] = useState(5);
 
   return (
-    <div className="bg-orange-500 min-h-screen text-white">
+    <div className="bg-orange-400 min-h-screen text-white">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-orange-600">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-orange-500">
         <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"></div>
         <div className="relative z-10 text-center text-white px-4">
           <motion.h1 
@@ -63,7 +63,7 @@ export default function About() {
             </div>
           </div>
           <div className="relative hidden lg:block">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-orange-600 flex items-center justify-center p-12 border-2 border-white/20">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-orange-500 flex items-center justify-center p-12 border-2 border-white/20">
               <div className="text-center space-y-6">
                 <Utensils size={80} className="text-white/20 mx-auto" />
                 <div className="serif text-3xl font-bold text-white/40 italic">Excellence in Every Bite</div>
@@ -76,7 +76,7 @@ export default function About() {
       </section>
 
       {/* Review Section */}
-      <section className="py-24 bg-orange-700 text-white relative overflow-hidden">
+      <section className="py-24 bg-orange-500 text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="serif text-4xl md:text-5xl font-bold mb-4">Give Us a Review</h2>
@@ -149,7 +149,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-orange-600">
+      <section className="py-24 bg-orange-500">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="serif text-4xl font-bold mb-4 text-white">Why Choose Us?</h2>
