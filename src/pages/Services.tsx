@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Utensils, Users, ChefHat, Flame, Coffee, PartyPopper, GraduationCap, Heart, Home as HomeIcon, Briefcase, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Utensils, Users, ChefHat, Flame, Coffee, PartyPopper, GraduationCap, Heart, Home as HomeIcon, Briefcase, Star, X, Send } from 'lucide-react';
 
 const services = [
   {
@@ -78,8 +78,132 @@ const services = [
 ];
 
 export default function Services() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+
+  const openModal = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+    setIsModalOpen(true);
+  };
+
   return (
-    <div className="bg-gray-50 min-h-screen pb-24">
+    <div className="bg-green-950 min-h-screen pb-24 relative">
+      {/* Enquiry Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden"
+            >
+              <div className="bg-red-dark p-6 text-white flex justify-between items-center">
+                <h3 className="serif text-2xl font-bold">Enquiry for {selectedService}</h3>
+                <button onClick={() => setIsModalOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="p-8 max-h-[70vh] overflow-y-auto">
+                <form action="https://formspree.io/f/xreoperz" method="POST" className="space-y-6">
+                  <input type="hidden" name="service_type" value={selectedService} />
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Full Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        required
+                        placeholder="Your Name"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Email Address</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        required
+                        placeholder="email@example.com"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        required
+                        placeholder="+91 00000 00000"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Area/Location</label>
+                      <input 
+                        type="text" 
+                        name="area"
+                        required
+                        placeholder="e.g. Ghaziabad"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Catering Type</label>
+                      <select name="catering_type" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all">
+                        <option value={selectedService}>{selectedService}</option>
+                        <option value="Buffet">Buffet</option>
+                        <option value="Plated">Plated Service</option>
+                        <option value="Live Counter">Live Counter</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500">People Approx</label>
+                      <input 
+                        type="number" 
+                        name="people_approx"
+                        required
+                        placeholder="e.g. 200"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Description / Special Requests</label>
+                    <textarea 
+                      name="description"
+                      rows={3}
+                      placeholder="Tell us more about your event..."
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" className="w-full bg-gold text-white py-4 rounded-xl font-bold text-lg hover:bg-red-dark transition-all duration-300 flex items-center justify-center gap-3 group">
+                    Submit Enquiry <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <section className="bg-charcoal text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -131,8 +255,11 @@ export default function Services() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {service.desc}
                 </p>
-                <button className="text-gold font-bold text-sm flex items-center gap-2 group/btn">
-                  Enquire Now <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                <button 
+                  onClick={() => openModal(service.title)}
+                  className="text-gold font-bold text-sm flex items-center gap-2 group/btn"
+                >
+                  Enquiry Now <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
             </motion.div>
@@ -148,12 +275,12 @@ export default function Services() {
             Our chefs are ready to create a bespoke culinary experience tailored specifically to your event's theme and dietary requirements.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-gold px-8 py-4 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all">
+            <a href="/contact#enquiry" className="bg-white text-gold px-8 py-4 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all inline-block">
               Talk to Our Chef
-            </button>
-            <button className="bg-charcoal text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-charcoal transition-all">
-              Request a Quote
-            </button>
+            </a>
+            <a href="/ai-planner" className="bg-charcoal text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-charcoal transition-all inline-block">
+              AI Planner
+            </a>
           </div>
         </div>
       </section>

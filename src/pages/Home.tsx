@@ -174,6 +174,19 @@ export default function Home() {
                   />
                 </div>
                 <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Area/Location</label>
+                  <input 
+                    type="text" 
+                    name="area"
+                    required
+                    placeholder="e.g. Ghaziabad"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Email Address</label>
                   <input 
                     type="email" 
@@ -183,9 +196,6 @@ export default function Home() {
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
                   />
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Phone Number</label>
                   <input 
@@ -196,27 +206,29 @@ export default function Home() {
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Event Type</label>
-                  <select name="event_type" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all appearance-none text-white">
-                    <option className="bg-charcoal">Wedding</option>
-                    <option className="bg-charcoal">Corporate Event</option>
-                    <option className="bg-charcoal">Birthday Party</option>
-                    <option className="bg-charcoal">Private Dinner</option>
-                    <option className="bg-charcoal">Other</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Persons approx</label>
-                  <input 
-                    type="number" 
-                    name="persons_approx"
-                    required
-                    placeholder="e.g. 150"
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
-                  />
-                </div>
               </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Event Type</label>
+                    <select name="event_type" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all appearance-none text-white">
+                      <option className="bg-charcoal">Wedding</option>
+                      <option className="bg-charcoal">Corporate Event</option>
+                      <option className="bg-charcoal">Birthday Party</option>
+                      <option className="bg-charcoal">Private Dinner</option>
+                      <option className="bg-charcoal">Other</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Persons approx</label>
+                    <input 
+                      type="number" 
+                      name="persons_approx"
+                      required
+                      placeholder="e.g. 150"
+                      className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all text-white placeholder:text-gray-400"
+                    />
+                  </div>
+                </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Your Message</label>
@@ -284,12 +296,17 @@ function ServicePreview({ image, title, desc }: { image: string, title: string, 
         referrerPolicy="no-referrer"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent opacity-80"></div>
-      <div className="absolute bottom-0 left-0 p-8 text-white">
+      <div className="absolute bottom-0 left-0 p-8 text-white w-full">
         <h3 className="serif text-2xl font-bold mb-2">{title}</h3>
         <p className="text-sm text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{desc}</p>
-        <a href="/services" className="text-gold text-sm font-bold flex items-center gap-1 group/link">
-          Learn More <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-        </a>
+        <div className="flex items-center justify-between">
+          <a href="/services" className="text-gold text-sm font-bold flex items-center gap-1 group/link">
+            Learn More <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+          </a>
+          <a href="/services" className="bg-gold text-white text-[10px] px-3 py-1.5 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-charcoal transition-all">
+            Enquiry Now
+          </a>
+        </div>
       </div>
     </div>
   );

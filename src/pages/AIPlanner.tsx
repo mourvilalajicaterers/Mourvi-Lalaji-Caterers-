@@ -65,7 +65,7 @@ export default function AIPlanner() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-[calc(100vh-80px)] py-12">
+    <div className="bg-pink-950 min-h-[calc(100vh-80px)] py-12">
       <div className="max-w-5xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -73,8 +73,8 @@ export default function AIPlanner() {
             <Sparkles size={16} />
             <span>AI-Powered Event Planning</span>
           </div>
-          <h1 className="serif text-4xl md:text-5xl font-bold text-charcoal mb-4">Plan Your Masterpiece</h1>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <h1 className="serif text-4xl md:text-5xl font-bold text-white mb-4">Plan Your Masterpiece</h1>
+          <p className="text-gray-200 max-w-2xl mx-auto">
             Our intelligent planner helps you curate the perfect culinary experience for your guests.
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function AIPlanner() {
 
           {/* Quick Suggestions */}
           <div className="space-y-6">
-            <h3 className="serif text-xl font-bold text-charcoal px-2">Try Asking...</h3>
+            <h3 className="serif text-xl font-bold text-white px-2">Try Asking...</h3>
             <SuggestionCard 
               icon={<Utensils size={18} />}
               title="Menu Suggestions"
