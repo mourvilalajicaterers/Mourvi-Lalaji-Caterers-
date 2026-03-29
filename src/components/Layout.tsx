@@ -46,8 +46,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className="absolute -top-1 -right-1 bg-gold text-white text-[8px] font-bold px-1 rounded-full border border-white">R</span>
               </div>
               <div className="flex flex-col">
-                <span className="serif text-xl font-bold tracking-tight text-white group-hover:text-gold transition-colors">Mourvi Lalaji</span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-purple-200/70">Caterers & Events</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-purple-200/70 font-bold leading-none mb-1">Mourvi</span>
+                <span className="serif text-2xl font-bold tracking-tight text-white group-hover:text-gold transition-colors leading-none">Lalaji Caterers</span>
               </div>
             </a>
 
@@ -149,7 +149,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className="h-10 w-10 object-contain rounded-full bg-white p-0.5"
                   referrerPolicy="no-referrer"
                 />
-                <span className="serif text-2xl font-bold">Mourvi Lalaji</span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold leading-none mb-1">Mourvi</span>
+                  <span className="serif text-2xl font-bold leading-none">Lalaji Caterers</span>
+                </div>
               </div>
               <div className="space-y-2">
                 <p className="text-gray-400 text-sm leading-relaxed">

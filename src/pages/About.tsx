@@ -37,7 +37,8 @@ export default function About() {
               A Legacy of <span className="text-gold italic">Taste & Elegance</span>
             </h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Mourvi Lalaji Caterers began with a simple mission: to bring the authentic flavors of India to the grandest celebrations. What started as a small family-run kitchen has grown into one of the most trusted names in premium event catering.
+              <span className="text-xs uppercase tracking-[0.2em] text-gold font-bold block mb-1">Mourvi</span>
+              <span className="font-bold text-charcoal">Lalaji Caterers</span> began with a simple mission: to bring the authentic flavors of India to the grandest celebrations. What started as a small family-run kitchen has grown into one of the most trusted names in premium event catering.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Our philosophy is built on three pillars: Quality, Innovation, and Service. We believe that food is not just sustenance; it's the heart of every celebration. That's why we source only the finest ingredients and employ master chefs who are passionate about their craft.
