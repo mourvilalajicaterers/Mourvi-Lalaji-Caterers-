@@ -144,7 +144,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p className="text-gold text-sm font-semibold">Founded by Rahul Dogra</p>
               </div>
               <div className="flex gap-4">
-                <SocialIcon href="https://www.instagram.com/lala.jicaterers?igsh=MTVlNWprcWNucTV1dw==" icon={<Instagram size={18} />} />
+                <SocialIcon href="https://www.instagram.com/mourvilalajicaterers_tm?utm_source=qr&igsh=MW42cm1sZDA3MjcxYw==" icon={<Instagram size={18} />} />
                 <SocialIcon href="#" icon={<Facebook size={18} />} />
                 <SocialIcon href="#" icon={<Twitter size={18} />} />
               </div>

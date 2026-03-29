@@ -65,9 +65,9 @@ export default function Contact() {
               <h3 className="serif text-xl font-bold mb-4 text-black">Follow Our Journey</h3>
               <p className="text-sm text-black mb-6">Stay updated with our latest events and culinary creations.</p>
               <div className="flex gap-4">
-                <SocialLink name="Instagram" />
-                <SocialLink name="Facebook" />
-                <SocialLink name="Twitter" />
+                <SocialLink name="Instagram" href="https://www.instagram.com/mourvilalajicaterers_tm?utm_source=qr&igsh=MW42cm1sZDA3MjcxYw==" />
+                <SocialLink name="Facebook" href="#" />
+                <SocialLink name="Twitter" href="#" />
               </div>
             </div>
           </div>
@@ -182,9 +182,9 @@ function ContactItem({ icon, title, content, subContent }: { icon: React.ReactNo
   );
 }
 
-function SocialLink({ name }: { name: string }) {
+function SocialLink({ name, href }: { name: string, href: string }) {
   return (
-    <a href="#" className="text-sm font-bold text-gold hover:text-charcoal transition-colors">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-gold hover:text-charcoal transition-colors">
       {name}
     </a>
   );
