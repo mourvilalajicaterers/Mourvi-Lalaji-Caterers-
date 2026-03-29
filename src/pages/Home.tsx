@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="relative bg-red-dark">
       {/* Hero Section */}
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-12 pb-24">
         {/* Premium Marquee */}
         <div className="absolute top-0 left-0 right-0 z-20 bg-gold/90 text-white py-2 overflow-hidden border-b border-white/20">
             <div className="flex whitespace-nowrap animate-marquee">
@@ -64,16 +64,16 @@ export default function Home() {
               The Art of Fine Catering
             </motion.span>
 
-            <h1 className="serif font-bold mb-8 leading-tight tracking-tighter flex flex-col items-center">
+            <h1 className="serif font-bold mb-6 leading-tight tracking-tighter flex flex-col items-center">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-xl md:text-2xl uppercase tracking-[0.5em] text-gold/80 mb-2 block font-sans"
+                className="text-lg md:text-2xl uppercase tracking-[0.5em] text-gold/80 mb-1 block font-sans"
               >
                 Mourvi
               </motion.span>
-              <span className="text-6xl md:text-8xl lg:text-9xl">
+              <span className="text-5xl md:text-8xl lg:text-9xl">
                 Lalaji <br />
                 <motion.span 
                   initial={{ opacity: 0, x: -20 }}
@@ -90,7 +90,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 1 }}
-              className="text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 font-light leading-relaxed tracking-wide"
+              className="text-base md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 font-light leading-relaxed tracking-wide"
             >
               Where tradition meets luxury. Crafting unforgettable culinary journeys for your most precious moments.
             </motion.p>
