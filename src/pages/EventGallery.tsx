@@ -441,32 +441,34 @@ export default function EventGallery() {
                 className="w-full h-full"
               >
                 {filteredItems.map((item, idx) => (
-                  <SwiperSlide key={idx} className="flex flex-col h-full p-4 md:p-8">
-                    <div className="flex-1 w-full flex items-center justify-center min-h-0">
-                      <div className="swiper-zoom-container h-full w-full flex items-center justify-center">
-                        <img 
-                          src={item.url} 
-                          alt={item.title} 
-                          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                          referrerPolicy="no-referrer"
-                        />
+                  <SwiperSlide key={idx} className="flex flex-col h-full p-4 md:p-12 items-center justify-center">
+                    <div className="w-full max-w-5xl flex flex-col items-center justify-center gap-6 md:gap-8 overflow-hidden">
+                      <div className="relative w-full flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl bg-black/20" style={{ maxHeight: '65vh' }}>
+                        <div className="swiper-zoom-container w-full h-full flex items-center justify-center">
+                          <img 
+                            src={item.url} 
+                            alt={item.title} 
+                            className="max-w-full max-h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    {/* Lightbox Caption - Below the image, fixed area */}
-                    <div className="shrink-0 w-full max-w-3xl mx-auto text-center mt-6 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
-                      <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-2 block">{item.category}</span>
-                      <h4 className="text-lg md:text-2xl font-bold serif text-white">{item.title}</h4>
+                      {/* Lightbox Caption - Below the image, fixed area */}
+                      <div className="w-full max-w-3xl text-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
+                        <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-3 block">{item.category}</span>
+                        <h4 className="text-xl md:text-3xl font-bold serif text-white leading-tight">{item.title}</h4>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
 
               {/* Custom Navigation Buttons */}
-              <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hidden md:block">
-                <ChevronLeft size={32} />
+              <button className="swiper-button-prev-custom absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all flex items-center justify-center">
+                <ChevronLeft size={24} className="md:w-8 md:h-8" />
               </button>
-              <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hidden md:block">
-                <ChevronRight size={32} />
+              <button className="swiper-button-next-custom absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all flex items-center justify-center">
+                <ChevronRight size={24} className="md:w-8 md:h-8" />
               </button>
             </div>
           </motion.div>
