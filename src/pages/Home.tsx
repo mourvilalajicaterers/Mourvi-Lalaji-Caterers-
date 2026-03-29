@@ -244,12 +244,12 @@ export default function Home() {
               category="Appetizer"
             />
             <DishCard 
-              image="https://images.unsplash.com/photo-1545231027-63b6af0c37ad?auto=format&fit=crop&q=80&w=800"
+              image="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=800"
               name="Dal Makhani"
               category="Main Course"
             />
             <DishCard 
-              image="https://images.unsplash.com/photo-1626777552726-4a6b547b4de5?auto=format&fit=crop&q=80&w=800"
+              image="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800"
               name="Hyderabadi Biryani"
               category="Specialty"
             />

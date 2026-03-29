@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Award, Heart, Shield, Users } from 'lucide-react';
+import { Award, Heart, Shield, Users, Star, Send, Utensils, Calendar } from 'lucide-react';
 
 export default function About() {
+  const [rating, setRating] = useState(5);
+
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
@@ -40,14 +42,28 @@ export default function About() {
             <p className="text-gray-600 leading-relaxed">
               Our philosophy is built on three pillars: Quality, Innovation, and Service. We believe that food is not just sustenance; it's the heart of every celebration. That's why we source only the finest ingredients and employ master chefs who are passionate about their craft.
             </p>
-            <div className="grid grid-cols-2 gap-8 pt-4">
-              <div>
-                <h4 className="serif text-3xl font-bold text-gold">20+</h4>
-                <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Years of Magic</p>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8">
+              <div className="text-center p-4 bg-gold/5 rounded-2xl border border-gold/10">
+                <Utensils className="text-gold mx-auto mb-2" size={24} />
+                <h4 className="serif text-2xl font-bold text-charcoal">500+</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Events Catered</p>
               </div>
-              <div>
-                <h4 className="serif text-3xl font-bold text-gold">500+</h4>
-                <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Events Perfected</p>
+              <div className="text-center p-4 bg-gold/5 rounded-2xl border border-gold/10">
+                <Users className="text-gold mx-auto mb-2" size={24} />
+                <h4 className="serif text-2xl font-bold text-charcoal">4000+</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Happy Guests</p>
+              </div>
+              <div className="text-center p-4 bg-gold/5 rounded-2xl border border-gold/10">
+                <Award className="text-gold mx-auto mb-2" size={24} />
+                <h4 className="serif text-2xl font-bold text-charcoal">20+</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Years Experience</p>
+              </div>
+              <div className="text-center p-4 bg-gold/5 rounded-2xl border border-gold/10">
+                <Star className="text-gold mx-auto mb-2" size={24} />
+                <h4 className="serif text-2xl font-bold text-charcoal">100%</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Satisfaction</p>
               </div>
             </div>
           </div>
@@ -62,6 +78,87 @@ export default function About() {
             </div>
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-gold rounded-3xl -z-10"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 border-2 border-gold rounded-3xl -z-10"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Section */}
+      <section className="py-24 bg-charcoal text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=2000" 
+            alt="Review Background" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="serif text-4xl md:text-5xl font-bold mb-4">Give Us a Review</h2>
+            <p className="text-gray-400">Your feedback helps us grow and serve you better</p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10">
+            <form action="https://formspree.io/f/mlgojpep" method="POST" className="space-y-8">
+              <div className="space-y-4">
+                <label className="text-xs font-bold uppercase tracking-widest text-gold/80 ml-2">Your Rating</label>
+                <div className="flex gap-4 justify-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => setRating(star)}
+                      className="transition-transform hover:scale-110"
+                    >
+                      <Star 
+                        size={40} 
+                        className={star <= rating ? "text-gold" : "text-white/20"} 
+                        fill={star <= rating ? "currentColor" : "none"} 
+                      />
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" name="rating" value={rating} />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gold/80 ml-2">Full Name</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    placeholder="John Doe"
+                    className="w-full px-8 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all text-white placeholder:text-gray-500"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-xs font-bold uppercase tracking-widest text-gold/80 ml-2">Email Address</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    required
+                    placeholder="john@example.com"
+                    className="w-full px-8 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all text-white placeholder:text-gray-500"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <label className="text-xs font-bold uppercase tracking-widest text-gold/80 ml-2">Your Experience</label>
+                <textarea 
+                  name="description"
+                  rows={4}
+                  required
+                  placeholder="Share your thoughts about our service..."
+                  className="w-full px-8 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all resize-none text-white placeholder:text-gray-500"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="w-full bg-gold text-white py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-charcoal transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl">
+                Submit Review <Send size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </form>
           </div>
         </div>
       </section>
