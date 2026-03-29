@@ -8,23 +8,74 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState('');
   const [showIntro, setShowIntro] = useState(true);
+  const [isPreloading, setIsPreloading] = useState(true);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-    const timer = setTimeout(() => setShowIntro(false), 2000);
-    return () => clearTimeout(timer);
+    
+    // Preloader duration
+    const preloaderTimer = setTimeout(() => setIsPreloading(false), 1500);
+    
+    // Curtain duration (starts after preloader)
+    const introTimer = setTimeout(() => setShowIntro(false), 3500);
+    
+    return () => {
+      clearTimeout(preloaderTimer);
+      clearTimeout(introTimer);
+    };
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-x-hidden">
-      {/* Curtain Intro */}
+      {/* Curtain Intro & Preloader */}
       <AnimatePresence>
         {showIntro && (
-          <div className="fixed inset-0 z-[100] flex pointer-events-none">
-            <div className="w-1/2 h-full bg-red-dark border-r border-gold/20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] animate-curtain-left flex items-center justify-end pr-8">
+          <div className="fixed inset-0 z-[100] flex pointer-events-none overflow-hidden">
+            {/* Left Curtain */}
+            <div className={`w-1/2 h-full bg-red-dark border-r border-gold/20 shadow-[10px_0_30px_rgba(0,0,0,0.5)] flex items-center justify-end pr-8 transition-transform duration-[1500ms] ease-[cubic-bezier(0.7,0,0.3,1)] ${!isPreloading ? '-translate-x-full' : 'translate-x-0'}`}>
               <div className="serif text-white text-4xl font-bold opacity-20 rotate-90 whitespace-nowrap">MOURVI LALAJI</div>
             </div>
-            <div className="w-1/2 h-full bg-red-dark border-l border-gold/20 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] animate-curtain-right flex items-center justify-start pl-8">
+            
+            {/* Preloader Logo (Centered) */}
+            <AnimatePresence>
+              {isPreloading && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
+                  className="absolute inset-0 z-[110] flex items-center justify-center pointer-events-auto"
+                >
+                  <div className="relative">
+                    <motion.div 
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                      className="relative z-10"
+                    >
+                      <img 
+                        src={LOGO_URL} 
+                        alt="Mourvi Lalaji Caterers" 
+                        className="h-32 w-32 md:h-48 md:w-48 object-contain rounded-full border-4 border-gold shadow-[0_0_50px_rgba(212,175,55,0.5)] bg-white p-1"
+                        referrerPolicy="no-referrer"
+                      />
+                    </motion.div>
+                    {/* Decorative Rings */}
+                    <motion.div 
+                      animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                      className="absolute inset-0 border-2 border-gold rounded-full"
+                    />
+                    <motion.div 
+                      animate={{ scale: [1, 2], opacity: [0.3, 0] }}
+                      transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
+                      className="absolute inset-0 border border-gold rounded-full"
+                    />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Right Curtain */}
+            <div className={`w-1/2 h-full bg-red-dark border-l border-gold/20 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] flex items-center justify-start pl-8 transition-transform duration-[1500ms] ease-[cubic-bezier(0.7,0,0.3,1)] ${!isPreloading ? 'translate-x-full' : 'translate-x-0'}`}>
               <div className="serif text-white text-4xl font-bold opacity-20 -rotate-90 whitespace-nowrap">CATERERS</div>
             </div>
           </div>
