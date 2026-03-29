@@ -441,22 +441,32 @@ export default function EventGallery() {
                 className="w-full h-full"
               >
                 {filteredItems.map((item, idx) => (
-                  <SwiperSlide key={idx} className="flex flex-col h-full p-4 md:p-12 items-center justify-center">
-                    <div className="w-full max-w-5xl flex flex-col items-center justify-center gap-6 md:gap-8 overflow-hidden">
-                      <div className="relative w-full flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl bg-black/20" style={{ maxHeight: '65vh' }}>
-                        <div className="swiper-zoom-container w-full h-full flex items-center justify-center">
+                  <SwiperSlide key={idx} className="flex items-center justify-center h-full p-4 md:p-12 lg:p-20">
+                    <div className="w-full h-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+                      {/* Image Container - Larger Frame */}
+                      <div className="relative w-full flex-[1.5] md:flex-[2] min-h-0 h-full flex items-center justify-center bg-black/40 rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group">
+                        <div className="swiper-zoom-container w-full h-full flex items-center justify-center p-2 md:p-4">
                           <img 
                             src={item.url} 
                             alt={item.title} 
-                            className="max-w-full max-h-full object-contain"
+                            className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                            style={{ maxHeight: '100%' }}
                             referrerPolicy="no-referrer"
                           />
                         </div>
                       </div>
-                      {/* Lightbox Caption - Below the image, fixed area */}
-                      <div className="w-full max-w-3xl text-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
-                        <span className="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-3 block">{item.category}</span>
-                        <h4 className="text-xl md:text-3xl font-bold serif text-white leading-tight">{item.title}</h4>
+                      
+                      {/* Lightbox Caption - Right side on Desktop, Below on Mobile */}
+                      <div className="w-full md:w-auto md:min-w-[320px] lg:min-w-[400px] md:flex-1 shrink-0 bg-black/60 backdrop-blur-2xl p-6 md:p-10 rounded-[2.5rem] border border-white/20 shadow-2xl flex flex-col justify-center text-center md:text-left">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/20 text-gold rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-4 md:mb-6 self-center md:self-start">
+                          <Sparkles size={14} />
+                          <span>{item.category}</span>
+                        </div>
+                        <h4 className="text-2xl md:text-4xl lg:text-5xl font-bold serif text-white leading-tight mb-4">{item.title}</h4>
+                        <div className="hidden md:block w-12 h-1 bg-gold/50 rounded-full mb-6"></div>
+                        <p className="text-white/60 text-sm md:text-base leading-relaxed hidden md:block italic">
+                          Experience the finest catering services by Mourvi Lalaji Caterers. Every detail is crafted to perfection for your special event.
+                        </p>
                       </div>
                     </div>
                   </SwiperSlide>
