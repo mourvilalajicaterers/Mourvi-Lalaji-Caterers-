@@ -125,52 +125,52 @@ const galleryItems = [
   {
     url: "https://i.ibb.co/hFWLpG6z/Whats-App-Image-2026-03-29-at-20-40-33.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/6RqC4WxN/Whats-App-Image-2026-03-29-at-20-40-33-1.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/5XRDy0Cv/Whats-App-Image-2026-03-29-at-20-40-34.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/vCQPmRc1/Whats-App-Image-2026-03-29-at-20-40-34-1.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/gLpjwLsk/Whats-App-Image-2026-03-29-at-20-40-34-2.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/s9GqyrGq/Whats-App-Image-2026-03-29-at-20-40-34-3.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/wqspqw0/Whats-App-Image-2026-03-29-at-20-40-35.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/dsMP8z3x/Whats-App-Image-2026-03-29-at-20-40-35-1.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/XrGH0b0g/Whats-App-Image-2026-03-29-at-20-40-35-2.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/4nVRRW38/Whats-App-Image-2026-03-29-at-20-40-35-3.jpg",
     title: "Specials",
-    category: "Catering"
+    category: "Specials"
   },
   {
     url: "https://i.ibb.co/twf1FRC1/Whats-App-Image-2026-03-29-at-20-41-25.jpg",
@@ -345,21 +345,50 @@ export default function EventGallery() {
       </section>
 
       {/* Filter Bar */}
-      <section className="pt-12 pb-4 max-w-7xl mx-auto px-4">
-        <div className="flex flex-wrap justify-center gap-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                activeCategory === category 
-                  ? 'bg-gold text-white shadow-lg scale-105' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+      <section className="sticky top-20 z-30 bg-white/80 backdrop-blur-md border-b border-gray-100 py-6">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold">
+                <Sparkles size={20} />
+              </div>
+              <div>
+                <h2 className="text-sm font-bold uppercase tracking-widest text-charcoal">Filter by Category</h2>
+                <p className="text-[10px] text-gray-400 uppercase tracking-widest">Showing {filteredItems.length} Moments</p>
+              </div>
+            </div>
+
+            {/* Desktop Buttons */}
+            <div className="hidden md:flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
+                    activeCategory === category 
+                      ? 'bg-gold text-white shadow-xl shadow-gold/20 scale-105' 
+                      : 'bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-charcoal border border-gray-100'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Dropdown */}
+            <div className="md:hidden w-full">
+              <select 
+                value={activeCategory}
+                onChange={(e) => setActiveCategory(e.target.value)}
+                className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm font-bold text-charcoal focus:outline-none focus:ring-2 focus:ring-gold/20 appearance-none"
+                style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%23D4AF37\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1.5rem center', backgroundSize: '1.5rem' }}
+              >
+                {categories.map((category) => (
+                  <option key={category} value={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -380,18 +409,21 @@ export default function EventGallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 cursor-pointer"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
                 onClick={() => openLightbox(index)}
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img 
                     src={item.url} 
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-110 group-hover:brightness-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Maximize2 className="text-white w-10 h-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div className="flex items-center gap-2 text-white/90 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <Maximize2 size={20} />
+                      <span className="text-xs font-bold uppercase tracking-widest">View Details</span>
+                    </div>
                   </div>
                 </div>
                 <div className="p-5 bg-white border-t border-gray-50">
