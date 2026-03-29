@@ -296,6 +296,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Event Highlights Gallery Section */}
+      <section className="py-24 bg-black/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Our Portfolio</span>
+              <h2 className="serif text-5xl md:text-6xl font-bold text-white mb-6">Event Highlights</h2>
+              <div className="w-24 h-[1px] bg-gold mx-auto mb-8"></div>
+              <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                A glimpse into the beautiful moments and exquisite setups we've created for our clients.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl"
+            >
+              <img 
+                src="https://i.ibb.co/hFWLpG6z/Whats-App-Image-2026-03-29-at-20-40-33.jpg" 
+                alt="Special Catering Setup" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Catering</span>
+                <h3 className="text-white font-bold text-xl">Exquisite Specials</h3>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl"
+            >
+              <img 
+                src="https://i.ibb.co/twf1FRC1/Whats-App-Image-2026-03-29-at-20-41-25.jpg" 
+                alt="Flower Decoration" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Decoration</span>
+                <h3 className="text-white font-bold text-xl">Floral Elegance</h3>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden group shadow-2xl hidden lg:block"
+            >
+              <img 
+                src="https://i.ibb.co/ycGbQJJN/Whats-App-Image-2026-03-29-at-20-41-28-2.jpg" 
+                alt="Candle Light Setup" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">Setup</span>
+                <h3 className="text-white font-bold text-xl">Atmospheric Lighting</h3>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <a 
+              href="/event-gallery" 
+              className="inline-flex items-center gap-3 bg-gold text-white px-12 py-5 rounded-full font-bold hover:bg-white hover:text-charcoal transition-all duration-500 shadow-xl group"
+            >
+              View Full Gallery <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial Section */}
       <section className="py-32 bg-red-dark relative overflow-hidden">
         {/* Decorative elements */}

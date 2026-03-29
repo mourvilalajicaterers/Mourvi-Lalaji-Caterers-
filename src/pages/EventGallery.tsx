@@ -120,6 +120,167 @@ const galleryItems = [
     url: "https://i.ibb.co/9mnB94wP/Whats-App-Image-2026-03-29-at-12-54-01-1.jpg",
     title: "High Trained Staff",
     category: "Team"
+  },
+  // New Images
+  {
+    url: "https://i.ibb.co/hFWLpG6z/Whats-App-Image-2026-03-29-at-20-40-33.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/6RqC4WxN/Whats-App-Image-2026-03-29-at-20-40-33-1.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/5XRDy0Cv/Whats-App-Image-2026-03-29-at-20-40-34.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/vCQPmRc1/Whats-App-Image-2026-03-29-at-20-40-34-1.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/gLpjwLsk/Whats-App-Image-2026-03-29-at-20-40-34-2.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/s9GqyrGq/Whats-App-Image-2026-03-29-at-20-40-34-3.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/wqspqw0/Whats-App-Image-2026-03-29-at-20-40-35.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/dsMP8z3x/Whats-App-Image-2026-03-29-at-20-40-35-1.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/XrGH0b0g/Whats-App-Image-2026-03-29-at-20-40-35-2.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/4nVRRW38/Whats-App-Image-2026-03-29-at-20-40-35-3.jpg",
+    title: "Specials",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/twf1FRC1/Whats-App-Image-2026-03-29-at-20-41-25.jpg",
+    title: "Flower Decoration",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/RTnfJfDF/Whats-App-Image-2026-03-29-at-20-41-25-1.jpg",
+    title: "Exclusive Setup",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/bMsqgGng/Whats-App-Image-2026-03-29-at-20-41-26.jpg",
+    title: "Tent",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/993KBs3d/Whats-App-Image-2026-03-29-at-20-41-26-1.jpg",
+    title: "Tent",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/Y7nCWQX8/Whats-App-Image-2026-03-29-at-20-41-27.jpg",
+    title: "Premium Setup",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/Wv6MTYP9/Whats-App-Image-2026-03-29-at-20-41-27-1.jpg",
+    title: "Quality Service",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/PsgFCPhS/Whats-App-Image-2026-03-29-at-20-41-27-2.jpg",
+    title: "Special",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/2JP3b09/Whats-App-Image-2026-03-29-at-20-41-27-3.jpg",
+    title: "Mocktail",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/0Vcvdt0D/Whats-App-Image-2026-03-29-at-20-41-28.jpg",
+    title: "Fruit Juice",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/yFzMhVS2/Whats-App-Image-2026-03-29-at-20-41-28-1.jpg",
+    title: "Different Tendors",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/ycGbQJJN/Whats-App-Image-2026-03-29-at-20-41-28-2.jpg",
+    title: "Candle light setup",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/0jkxFtff/Whats-App-Image-2026-03-29-at-20-41-28-3.jpg",
+    title: "Quality Service feels Luxury",
+    category: "Catering"
+  },
+  {
+    url: "https://i.ibb.co/cKwmLjrG/Whats-App-Image-2026-03-29-at-20-42-01.jpg",
+    title: "Birthday Ballons Set up",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/SwMMKhhn/Whats-App-Image-2026-03-29-at-20-42-01-1.jpg",
+    title: "DJ/Music Service",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/ns9JScnR/Whats-App-Image-2026-03-29-at-20-42-02.jpg",
+    title: "Birthday Party",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/ZpVtwd40/Whats-App-Image-2026-03-29-at-20-42-02-1.jpg",
+    title: "Clown Dolls Setup",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/LhsM9N0y/Whats-App-Image-2026-03-29-at-20-42-02-2.jpg",
+    title: "Smiles into Happiness",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/k65vD4HP/Whats-App-Image-2026-03-29-at-20-42-02-3.jpg",
+    title: "Birthday",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/Xf3KtWSy/Whats-App-Image-2026-03-29-at-20-43-59.jpg",
+    title: "Our Decors",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/MybJm12p/Whats-App-Image-2026-03-29-at-20-43-59-1.jpg",
+    title: "Decorated Stage & Chairs",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/Q7WGv3Ss/Whats-App-Image-2026-03-29-at-20-44-00.jpg",
+    title: "Corporate Parties",
+    category: "Decoration"
+  },
+  {
+    url: "https://i.ibb.co/DDTC91JF/Whats-App-Image-2026-03-29-at-20-44-00-1.jpg",
+    title: "Entrance",
+    category: "Decoration"
   }
 ];
 
