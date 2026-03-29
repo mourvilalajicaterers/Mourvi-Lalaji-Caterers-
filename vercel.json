@@ -4,6 +4,7 @@
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/ai-planner", "destination": "/ai-planner.html" },
+    { "source": "/event-gallery", "destination": "/event-gallery.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }
