@@ -35,6 +35,7 @@ async function startServer() {
     app.get("/about", (req, res, next) => serveHtml(req, res, next, "about.html"));
     app.get("/contact", (req, res, next) => serveHtml(req, res, next, "contact.html"));
     app.get("/ai-planner", (req, res, next) => serveHtml(req, res, next, "ai-planner.html"));
+    app.get("/event-gallery", (req, res, next) => serveHtml(req, res, next, "event-gallery.html"));
 
   } else {
     const distPath = path.join(process.cwd(), "dist");
@@ -46,6 +47,7 @@ async function startServer() {
     app.get("/about", (req, res) => res.sendFile(path.join(distPath, "about.html")));
     app.get("/contact", (req, res) => res.sendFile(path.join(distPath, "contact.html")));
     app.get("/ai-planner", (req, res) => res.sendFile(path.join(distPath, "ai-planner.html")));
+    app.get("/event-gallery", (req, res) => res.sendFile(path.join(distPath, "event-gallery.html")));
     app.get("/", (req, res) => res.sendFile(path.join(distPath, "index.html")));
   }
 

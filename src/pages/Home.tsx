@@ -36,6 +36,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+              </span>
+              <span className="text-white/90 text-xs font-bold uppercase tracking-widest">Serving since 2006</span>
+            </div>
             <span className="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">Exquisite Culinary Experiences</span>
             <h1 className="serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               Mourvi Lalaji <br /> <span className="italic text-gold">Caterers</span>
@@ -78,7 +85,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <StatCard icon={<Utensils className="text-white" />} number="500+" label="Events Catered" />
             <StatCard icon={<Users className="text-white" />} number="4000+" label="Happy Guests" />
-            <StatCard icon={<Star className="text-white" />} number="5+" label="Years Experience" />
+            <StatCard icon={<Star className="text-white" />} number="20+" label="Years Experience" />
             <StatCard icon={<Calendar className="text-white" />} number="100%" label="Satisfaction" />
           </div>
         </div>

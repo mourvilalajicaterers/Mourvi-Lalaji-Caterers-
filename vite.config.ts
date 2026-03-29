@@ -23,6 +23,7 @@ export default defineConfig(({mode}) => {
           about: path.resolve(__dirname, 'about.html'),
           contact: path.resolve(__dirname, 'contact.html'),
           aiPlanner: path.resolve(__dirname, 'ai-planner.html'),
+          eventGallery: path.resolve(__dirname, 'event-gallery.html'),
         },
       },
     },

@@ -55,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="hidden md:flex items-center gap-8">
               <NavLink href="/" current={currentPath}>Home</NavLink>
               <NavLink href="/services" current={currentPath}>Services</NavLink>
+              <NavLink href="/event-gallery" current={currentPath}>Event Gallery</NavLink>
               <NavLink href="/about" current={currentPath}>About Us</NavLink>
               <NavLink href="/ai-planner" current={currentPath}>AI Planner</NavLink>
               <a 
@@ -87,6 +88,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="px-4 pt-2 pb-6 space-y-2">
                 <MobileNavLink href="/" current={currentPath}>Home</MobileNavLink>
                 <MobileNavLink href="/services" current={currentPath}>Services</MobileNavLink>
+                <MobileNavLink href="/event-gallery" current={currentPath}>Event Gallery</MobileNavLink>
                 <MobileNavLink href="/about" current={currentPath}>About Us</MobileNavLink>
                 <MobileNavLink href="/ai-planner" current={currentPath}>AI Planner</MobileNavLink>
                 <MobileNavLink href="/contact" current={currentPath}>Contact Us</MobileNavLink>
@@ -142,9 +144,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p className="text-gold text-sm font-semibold">Founded by Rahul Dogra</p>
               </div>
               <div className="flex gap-4">
-                <SocialIcon icon={<Instagram size={18} />} />
-                <SocialIcon icon={<Facebook size={18} />} />
-                <SocialIcon icon={<Twitter size={18} />} />
+                <SocialIcon href="https://www.instagram.com/lala.jicaterers?igsh=MTVlNWprcWNucTV1dw==" icon={<Instagram size={18} />} />
+                <SocialIcon href="#" icon={<Facebook size={18} />} />
+                <SocialIcon href="#" icon={<Twitter size={18} />} />
               </div>
             </div>
 
@@ -154,6 +156,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4 text-sm text-gray-400">
                 <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
                 <li><a href="/services" className="hover:text-white transition-colors">Our Services</a></li>
+                <li><a href="/event-gallery" className="hover:text-white transition-colors">Event Gallery</a></li>
                 <li><a href="/about" className="hover:text-white transition-colors">About Our Story</a></li>
                 <li><a href="/ai-planner" className="hover:text-white transition-colors">AI Event Planner</a></li>
               </ul>
@@ -238,9 +241,9 @@ function MobileNavLink({ href, current, children }: { href: string, current: str
   );
 }
 
-function SocialIcon({ icon }: { icon: React.ReactNode }) {
+function SocialIcon({ icon, href }: { icon: React.ReactNode, href: string }) {
   return (
-    <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all duration-300">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all duration-300">
       {icon}
     </a>
   );

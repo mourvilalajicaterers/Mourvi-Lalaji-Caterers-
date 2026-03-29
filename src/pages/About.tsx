@@ -30,7 +30,7 @@ export default function About() {
       <section className="py-24 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="inline-block px-4 py-1 bg-gold/10 text-gold rounded-full text-xs font-bold uppercase tracking-widest">Since 2008</div>
+            <div className="inline-block px-4 py-1 bg-gold/10 text-gold rounded-full text-xs font-bold uppercase tracking-widest">Since 2006</div>
             <h2 className="serif text-4xl md:text-5xl font-bold text-charcoal leading-tight">
               A Legacy of <span className="text-gold italic">Taste & Elegance</span>
             </h2>
@@ -42,7 +42,7 @@ export default function About() {
             </p>
             <div className="grid grid-cols-2 gap-8 pt-4">
               <div>
-                <h4 className="serif text-3xl font-bold text-gold">15+</h4>
+                <h4 className="serif text-3xl font-bold text-gold">20+</h4>
                 <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Years of Magic</p>
               </div>
               <div>

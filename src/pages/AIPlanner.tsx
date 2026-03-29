@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, Sparkles, Utensils, Calendar, Users, MapPin, Loader2, Bot } from 'lucide-react';
+import { Send, Sparkles, Utensils, Calendar, Users, MapPin, Loader2 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
@@ -9,6 +9,8 @@ interface Message {
   role: 'user' | 'assistant';
   content: string;
 }
+
+const LOGO_URL = "https://i.ibb.co/gL2vBKtr/Whats-App-Image-2026-03-28-at-21-50-29.jpg";
 
 export default function AIPlanner() {
   const [messages, setMessages] = useState<Message[]>([
@@ -96,8 +98,17 @@ export default function AIPlanner() {
                     className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center ${msg.role === 'user' ? 'bg-gold text-white' : 'bg-charcoal text-white'}`}>
-                        {msg.role === 'user' ? <Users size={14} /> : <Bot size={14} />}
+                      <div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center overflow-hidden ${msg.role === 'user' ? 'bg-gold text-white' : 'bg-white border border-gray-100'}`}>
+                        {msg.role === 'user' ? (
+                          <Users size={14} />
+                        ) : (
+                          <img 
+                            src={LOGO_URL} 
+                            alt="Mourvi Lalaji" 
+                            className="w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
+                          />
+                        )}
                       </div>
                       <div className={`p-4 rounded-2xl text-sm leading-relaxed ${
                         msg.role === 'user' 

@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import AIPlanner from './pages/AIPlanner';
+import EventGallery from './pages/EventGallery';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/event-gallery" element={<EventGallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ai-planner" element={<AIPlanner />} />
         </Routes>
