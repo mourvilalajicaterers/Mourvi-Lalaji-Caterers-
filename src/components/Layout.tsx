@@ -96,9 +96,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <span className="absolute -top-1 -right-1 bg-gold text-white text-[8px] font-bold px-1 rounded-full border border-white">R</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-purple-200/70 font-bold leading-none mb-1">Mourvi</span>
-                <span className="serif text-2xl font-bold tracking-tight text-white group-hover:text-gold transition-colors leading-none">Lalaji Caterers</span>
+              <div className="flex items-start gap-1">
+                <span className="text-[7px] uppercase tracking-widest text-purple-200/60 font-bold mt-1">Mourvi</span>
+                <span className="serif text-2xl font-black tracking-tight text-gold uppercase group-hover:text-white transition-colors">Lalaji Caterers</span>
               </div>
             </a>
 
@@ -200,9 +200,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   className="h-10 w-10 object-contain rounded-full bg-white p-0.5"
                   referrerPolicy="no-referrer"
                 />
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold leading-none mb-1">Mourvi</span>
-                  <span className="serif text-2xl font-bold leading-none">Lalaji Caterers</span>
+                <div className="flex items-start gap-1">
+                  <span className="text-[7px] uppercase tracking-widest text-gold/60 font-bold mt-1">Mourvi</span>
+                  <span className="serif text-2xl font-black text-white uppercase">Lalaji Caterers</span>
                 </div>
               </div>
               <div className="space-y-2">

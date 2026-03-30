@@ -30,9 +30,9 @@ export default function About() {
             <h2 className="serif text-4xl md:text-5xl font-bold text-white leading-tight">
               A Legacy of <span className="text-white italic underline decoration-gold/50">Taste & Elegance</span>
             </h2>
-            <p className="text-white/90 leading-relaxed text-lg">
-              <span className="text-xs uppercase tracking-[0.2em] text-white font-bold block mb-1">Mourvi</span>
-              <span className="font-bold text-white">Lalaji Caterers</span> began with a simple mission: to bring the authentic flavors of India to the grandest celebrations. What started as a small family-run kitchen has grown into one of the most trusted names in premium event catering.
+            <p className="text-white/90 leading-relaxed text-lg flex items-start gap-1">
+              <span className="text-[7px] uppercase tracking-widest text-white/60 font-bold mt-1">Mourvi</span>
+              <span><span className="font-black text-gold uppercase">LALAJI CATERERS</span> began with a simple mission: to bring the authentic flavors of India to the grandest celebrations. What started as a small family-run kitchen has grown into one of the most trusted names in premium event catering.</span>
             </p>
             <p className="text-white/80 leading-relaxed">
               Our philosophy is built on three pillars: Quality, Innovation, and Service. We believe that food is not just sustenance; it's the heart of every celebration. That's why we source only the finest ingredients and employ master chefs who are passionate about their craft.
@@ -152,7 +152,7 @@ export default function About() {
       <section className="py-24 bg-orange-500">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="serif text-4xl font-bold mb-4 text-white">Why Choose Us?</h2>
+            <h2 className="serif text-4xl font-bold mb-4 text-white uppercase tracking-tight">Why Choose <span className="text-gold">LALAJI CATERERS</span>?</h2>
             <p className="text-white/70">The values that drive our culinary excellence</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

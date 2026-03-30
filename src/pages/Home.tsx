@@ -10,10 +10,10 @@ export default function Home() {
         {/* Premium Marquee */}
         <div className="absolute top-0 left-0 right-0 z-20 bg-gold/90 text-white py-2 overflow-hidden border-b border-white/20">
             <div className="flex whitespace-nowrap animate-marquee">
-              <span className="mx-4 text-sm font-bold tracking-widest uppercase"><span className="text-[10px] opacity-70">Mourvi</span> Lalaji Caterers • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
-              <span className="mx-4 text-sm font-bold tracking-widest uppercase"><span className="text-[10px] opacity-70">Mourvi</span> Lalaji Caterers • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
-              <span className="mx-4 text-sm font-bold tracking-widest uppercase"><span className="text-[10px] opacity-70">Mourvi</span> Lalaji Caterers • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
-              <span className="mx-4 text-sm font-bold tracking-widest uppercase"><span className="text-[10px] opacity-70">Mourvi</span> Lalaji Caterers • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+              <span className="mx-4 text-sm font-black tracking-widest uppercase"><span className="text-[7px] font-normal opacity-60 align-top mr-1">Mourvi</span> <span className="text-white">Lalaji Caterers</span> • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+              <span className="mx-4 text-sm font-black tracking-widest uppercase"><span className="text-[7px] font-normal opacity-60 align-top mr-1">Mourvi</span> <span className="text-white">Lalaji Caterers</span> • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+              <span className="mx-4 text-sm font-black tracking-widest uppercase"><span className="text-[7px] font-normal opacity-60 align-top mr-1">Mourvi</span> <span className="text-white">Lalaji Caterers</span> • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
+              <span className="mx-4 text-sm font-black tracking-widest uppercase"><span className="text-[7px] font-normal opacity-60 align-top mr-1">Mourvi</span> <span className="text-white">Lalaji Caterers</span> • Exquisite Culinary Experiences • Premium Event Management • 24/7 Service • </span>
             </div>
         </div>
 
@@ -64,26 +64,33 @@ export default function Home() {
               The Art of Fine Catering
             </motion.span>
 
-            <h1 className="serif font-bold mb-6 leading-tight tracking-tighter flex flex-col items-center">
-              <motion.span 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-lg md:text-2xl uppercase tracking-[0.5em] text-gold/80 mb-1 block font-sans"
-              >
-                Mourvi
-              </motion.span>
-              <span className="text-5xl md:text-8xl lg:text-9xl">
-                Lalaji <br />
+            <h1 className="serif font-black mb-6 leading-tight tracking-tighter flex flex-col items-center">
+              <div className="flex items-start gap-1 md:gap-2 mb-2">
                 <motion.span 
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8, duration: 0.8 }}
-                  className="italic text-gold inline-block"
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="text-[8px] md:text-sm uppercase tracking-[0.3em] text-white/40 font-sans mt-2 md:mt-4"
                 >
-                  Caterers
+                  Mourvi
                 </motion.span>
-              </span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                  className="text-4xl md:text-7xl lg:text-8xl uppercase text-gold"
+                >
+                  Lalaji
+                </motion.span>
+              </div>
+              <motion.span 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="text-5xl md:text-8xl lg:text-9xl uppercase text-white"
+              >
+                Caterers
+              </motion.span>
             </h1>
 
             <motion.p 
@@ -152,8 +159,8 @@ export default function Home() {
             >
               <span className="text-gold font-bold uppercase tracking-widest text-sm mb-4 block">Our Excellence</span>
               <h2 className="serif text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                <span className="text-sm uppercase tracking-[0.3em] text-gold block mb-2 font-sans">Mourvi</span>
-                Why Choose Lalaji Caterers?
+                <span className="text-[7px] uppercase tracking-[0.2em] text-gold/60 font-bold align-top mt-1">Mourvi</span>
+                Why Choose <span className="text-gold uppercase">LALAJI CATERERS</span>?
               </h2>
               <p className="text-gray-300 text-lg mb-10 leading-relaxed">
                 With over two decades of experience, we don't just serve food; we create memories. Our commitment to quality, hygiene, and authentic taste sets us apart.

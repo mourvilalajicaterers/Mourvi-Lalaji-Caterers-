@@ -16,7 +16,7 @@ export default function AIPlanner() {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: "Hello! I'm your AI Event Planner from Mourvi Lalaji Caterers. I can help you design the perfect menu, estimate quantities, and suggest themes for your upcoming event. What kind of celebration are you planning?" 
+      content: "Hello! I'm your AI Event Planner from MOURVI LALAJI CATERERS. I can help you design the perfect menu, estimate quantities, and suggest themes for your upcoming event. What kind of celebration are you planning?" 
     }
   ]);
   const [input, setInput] = useState('');
@@ -43,16 +43,16 @@ export default function AIPlanner() {
         contents: [
           { 
             role: 'user', 
-            parts: [{ text: `You are a professional AI Event Planner for "Mourvi Lalaji Caterers". 
+            parts: [{ text: `You are a professional AI Event Planner for "MOURVI LALAJI CATERERS". 
             Your goal is to help users plan their event catering and management. 
             Be professional, premium, and helpful. 
-            Suggest specific Indian and International cuisines that Mourvi Lalaji Caterers specializes in.
+            Suggest specific Indian and International cuisines that MOURVI LALAJI CATERERS specializes in.
             Current conversation: ${messages.map(m => `${m.role}: ${m.content}`).join('\n')}
             User says: ${userMessage}` }] 
           }
         ],
         config: {
-          systemInstruction: "You are an expert event planner for Mourvi Lalaji Caterers. You help clients with menu selection, guest estimation, and event logistics. You are polite, sophisticated, and knowledgeable about Indian hospitality."
+          systemInstruction: "You are an expert event planner for MOURVI LALAJI CATERERS. You help clients with menu selection, guest estimation, and event logistics. You are polite, sophisticated, and knowledgeable about Indian hospitality."
         }
       });
 

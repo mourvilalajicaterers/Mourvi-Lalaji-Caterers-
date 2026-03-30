@@ -497,7 +497,7 @@ export default function EventGallery() {
                         <h4 className="text-2xl md:text-4xl lg:text-5xl font-bold serif text-white leading-tight mb-4">{item.title}</h4>
                         <div className="hidden md:block w-12 h-1 bg-gold/50 rounded-full mb-6"></div>
                         <p className="text-white/60 text-sm md:text-base leading-relaxed hidden md:block italic">
-                          Experience the finest catering services by Mourvi Lalaji Caterers. Every detail is crafted to perfection for your special event.
+                          Experience the finest catering services by MOURVI LALAJI CATERERS. Every detail is crafted to perfection for your special event.
                         </p>
                       </div>
                     </div>
